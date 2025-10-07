@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Daily Infor | News, Sports, and Entertainment</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="script.js"></script>
+
+  <link rel="icon" href="logo.jpeg" />
+</head>
+<body>
+
+  <!-- 🧭 Header Section -->
+  <header class="header">
+    <div class="container">
+      <img src="logo.jpeg" alt="Daily Infor Logo" class="logo" />
+      <nav class="navbar">
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#news">News</a></li>
+          <li><a href="#live">Live</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- 📰 News Section -->
+  <section id="news" class="news-section">
+    <h2>Latest News</h2>
+    <div id="news-container" class="news-container">
+      <!-- News will load dynamically from JSON -->
+    </div>
+  </section>
+
+  <!-- 📺 Live Section -->
+  <section id="live" class="live-section">
+    <h2>Live Stream</h2>
+    <div class="video-container">
+      <iframe 
+        src="https://www.youtube.com/embed/live_stream?channel=UC27-nOqGebMyY5YeuzbdAEA"
+        title="Daily Infor Live Stream"
+        frameborder="0"
+        allowfullscreen>
+Joined Sep 25, 2025
+
+      </iframe>
+    </div>
+  </section>
+
+  <!-- 📩 Contact Section -->
+  <section id="contact" class="contact-section">
+    <h2>Contact Us</h2>
+    <form id="contact-form" action="https://formspree.io/f/mpwyjdbo" method="POST">
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="email" name="email" placeholder="Your Email" required />
+      <textarea name="message" rows="4" placeholder="Your Message"></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <!-- ⚓ Footer -->
+  <footer>
+    <p>&copy; 2025 Daily Infor. All rights reserved.</p>
+  </footer>
+
+<script>
+  // List of all news articles (no external file needed)
+  const newsArticles = [
+  {
+  title: "Bukayo Saka Clarifies Penalty Decision Amid Arsenal’s Win Over West Ham",
+  date: "October 7, 2025",
+  summary:
+    "Arsenal star Bukayo Saka has cleared the air over his decision to take the penalty in the Gunners’ 2-0 victory against West Ham United on Sunday — a moment that not only helped seal three points but also marked a remarkable personal milestone in his career.",
+  mediaType: "image",
+  mediaSrc: "https://i.imgur.com/9YJ6R9u.jpg",
+  socialLinks: {
+    facebook: "https://www.facebook.com/share/p/1CfEua67fS/",
+    instagram: "https://www.instagram.com/yourpage/",
+    twitter: "https://twitter.com/yourpage/",
+    whatsapp: "https://wa.me/+2348073572271"
+  }
+},
+    {
+      title: "Super Eagles Qualify for World Cup 2026",
+      date: "September 20, 2025",
+      summary:
+        "Nigeria’s national football team secured a thrilling 3-2 victory to qualify for the upcoming FIFA World Cup in 2026. Fans across the nation celebrate another moment of history.",
+      mediaType: "image",
+      mediaSrc: "https://i.imgur.com/OBpQY0I.jpg"
+    },
+    {
+      title: "Messi Announces Retirement from International Football",
+      date: "September 18, 2025",
+      summary:
+        "After an illustrious career, Lionel Messi officially announced his retirement from international football. The Argentine legend ends his journey with a World Cup and Copa America title.",
+      mediaType: "video",
+      mediaSrc: "https://www.youtube.com/embed/dQw4w9WgXcQ"
+    },
+    {
+      title: "Premier League Introduces New VAR System for 2026 Season",
+      date: "September 10, 2025",
+      summary:
+        "The Premier League has confirmed a next-generation VAR system will be launched next season to improve decision accuracy and reduce delays during matches.",
+      mediaType: "image",
+      mediaSrc: "https://i.imgur.com/Yd0zW7S.jpg"
+    }
+  ];
+
+  // Display news dynamically
+  const container = document.getElementById("news-container");
+  container.innerHTML = "";
+
+  newsArticles.forEach(article => {
+    const articleDiv = document.createElement("div");
+    articleDiv.classList.add("news-article");
+    articleDiv.innerHTML = `
+      <h3 class="news-title">${article.title}</h3>
+      <p class="news-date">${article.date}</p>
+      <p class="news-summary">${article.summary}</p>
+      ${
+        article.mediaType === "image"
+          ? `<img class="news-media" src="${article.mediaSrc}" alt="${article.title}">`
+          : `<iframe class="news-media" src="${article.mediaSrc}" frameborder="0" allowfullscreen></iframe>`
+      }
+    `;
+    container.appendChild(articleDiv);
+  });
+</script>
+
+</body>
+</html>

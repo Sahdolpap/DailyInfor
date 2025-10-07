@@ -1,0 +1,154 @@
+/* 🌍 Global Style */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background-color: #f4f4f9;
+  color: #222;
+  line-height: 1.6;
+}
+
+/* 🧭 Header */
+.header {
+  background-color: green;
+  color: white;
+  padding: 15px 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1100px;
+  margin: auto;
+  padding: 0 20px;
+}
+
+.logo {
+  height: 50px;
+  border-radius: 10px;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: green;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.navbar a:hover {
+  color: green;
+}
+
+/* 📰 News Section */
+.news-section {
+  padding: 50px 20px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+.news-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.news-article {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  padding: 15px;
+  transition: transform 0.3s;
+}
+
+.news-article:hover {
+  transform: translateY(-5px);
+}
+
+.news-article img, 
+.news-article iframe {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.news-title {
+  font-weight: 700;
+  margin: 10px 0;
+  font-size: 1.1rem;
+}
+
+.news-summary {
+  font-size: 0.95rem;
+  color: #555;
+}
+
+/* 📺 Live */
+.live-section {
+  background: green;
+  color: white;
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.video-container iframe {
+  width: 90%;
+  height: 400px;
+  border-radius: 15px;
+}
+
+/* 📩 Contact */
+.contact-section {
+  padding: 50px 20px;
+  background: green;
+  text-align: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 500px;
+  margin: auto;
+}
+
+input, textarea {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+button {
+  background: #111;
+  color: green;
+  border: none;
+  padding: 12px;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+button:hover {
+  background: #f8c102;
+  color: #111;
+}
+
+/* ⚓ Footer */
+footer {
+  background: green;
+  color: #ddd;
+  text-align: center;
+  padding: 15px;
+  font-size: 0.9rem;
+}
